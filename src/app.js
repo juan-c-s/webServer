@@ -4,7 +4,7 @@ const express = require('express')
 
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
-
+const port = process.env.PORT || 3000;
 
 
 const app = express()
@@ -102,7 +102,7 @@ app.get('*', (req, res) => {
     });
 })
 //this runs the server in the port 3000 and will print to the console when it runs. I think this will be  similar to the initState in dart-flutter in the terms of loading stuff first
-app.listen(3000, () => {
-    console.log('Server up and running')
+app.listen(port, () => {
+    console.log('Server up and running on port ' + port)
 })
 
